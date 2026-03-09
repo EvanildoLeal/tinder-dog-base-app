@@ -1,0 +1,27 @@
+
+import { StyleSheet } from "react-native"
+
+
+
+export const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems:'center'
+    },
+    contentImage: {
+        height: '90%',
+        width: '30%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#FFA500',
+        borderRadius:20
+    },
+    imageDog: {
+        height: '90%',
+        width: '90%',
+        borderRadius: 10,  // Opcional: para deixar redonda (metade do width/height)
+        resizeMode: 'cover'  // Garante que a imagem preencha o espaço
+    }
+
+})
