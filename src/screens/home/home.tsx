@@ -4,11 +4,13 @@ import { useEffect, useState } from "react"
 import { Text, TouchableOpacity, View, Image } from "react-native"
 import { styles } from './styles'
 import AntDesign from '@expo/vector-icons/AntDesign';
-
+import { router } from 'expo-router';
+import { useDispatch } from "react-redux";
 
 export const Home = () => {
     const [dogs, setDogs] = useState([])  
     const [match, setMatch] = useState([])
+    const dispatch = useDispatch()
 
     const getApi = async () => {
         return await axios.get('http://localhost:3000/dogs/getAllDogs').then((resp) => {
@@ -25,13 +27,19 @@ export const Home = () => {
         setDogs((prevState) => prevState.slice(1))
     }
 
+    const handlePressImage = () => {
+        dispatch(setDetailsDog(dogs[0]))
+        router.navigate('/(stacks)/datails-dog')
+    }
+
     useEffect(() => {
         getApi()
     }, [])
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={() => router.navigate('/stacks)/datails-dogs')}
+            <TouchableOpacity 
+                onPress={handlePressImage}
                 style={styles.contentImage}
             >
                 <Image
