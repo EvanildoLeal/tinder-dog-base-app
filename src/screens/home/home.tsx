@@ -5,8 +5,9 @@ import { Text, TouchableOpacity, View, Image } from "react-native"
 import { styles } from './styles'
 import AntDesign from '@expo/vector-icons/AntDesign';
 
+
 export const Home = () => {
-    const [dogs, setDogs] = useState([])  // ← MUDE AQUI: adicione [] como valor inicial
+    const [dogs, setDogs] = useState([])  
     const [match, setMatch] = useState([])
 
     const getApi = async () => {
@@ -30,13 +31,13 @@ export const Home = () => {
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity style={styles.contentImage}>
-                {dogs.length > 0 && (
-                    <Image
-                        source={{ uri: dogs[0]?.image[0] }}
-                        style={styles.imageDog}
-                    />
-                )}
+            <TouchableOpacity onPress={() => router.navigate('/stacks)/datails-dogs')}
+                style={styles.contentImage}
+            >
+                <Image
+                    source={{ uri: dogs[0]?.image[0] }}
+                    style={styles.imageDog}
+                />
             </TouchableOpacity>
             <View style={styles.contentButtons}>
                 <TouchableOpacity
