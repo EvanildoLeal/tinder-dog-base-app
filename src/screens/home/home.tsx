@@ -6,6 +6,7 @@ import { styles } from './styles'
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { router } from 'expo-router';
 import { useDispatch } from "react-redux";
+import { setDetailsDog } from "@/src/store/slices/details-dog-slice";
 
 export const Home = () => {
     const [dogs, setDogs] = useState([])  
