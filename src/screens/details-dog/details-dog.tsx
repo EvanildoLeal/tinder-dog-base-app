@@ -8,16 +8,25 @@ import { RowList } from "@/src/components/row-list/row-list";
 export const DetailsDog = () => {
     const detailsDog = useSelector((state: RootState) => state.detailsDog.details)
     console.log('detailsDog', detailsDog)
-    
+
     return (
         <View style={styles.container}>
             <View style={styles.contentImage}>
                 <Image
                     style={styles.imageDog}
-                    source={{uri: detailsDog?.image?.[0]}}
+                    source={{ uri: detailsDog?.image?.[0] }}
                 />
             </View>
+
             <View style={styles.contentDescription}>
+                {/* Bolinhas nos 4 cantos */}
+                <View style={styles.dotsContainer}>
+                    <View style={[styles.dotTopLeft, styles.dotActive]} />
+                    <View style={styles.dotTopRight} />
+                    <View style={styles.dotBottomLeft} />
+                    <View style={styles.dotBottomRight} />
+                </View>
+
                 <RowList
                     description={detailsDog?.name}
                     title='Nome:'
