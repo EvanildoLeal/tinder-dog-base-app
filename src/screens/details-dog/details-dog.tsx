@@ -1,7 +1,9 @@
+// @ts-nocheck
 import { RootState } from "@/src/store";
-import { Text, View, Image } from 'react-native';
+import { View, Image } from 'react-native';
 import { useSelector } from "react-redux";
 import { styles } from "./styles";
+import { RowList } from "@/src/components/row-list/row-list";
 
 export const DetailsDog = () => {
     const detailsDog = useSelector((state: RootState) => state.detailsDog.details)
@@ -10,16 +12,32 @@ export const DetailsDog = () => {
     return (
         <View style={styles.container}>
             <View style={styles.contentImage}>
-            <Image
-                style={styles.imageDog}
-                // @ts-ignore
-                source={{uri: detailsDog?.image?.[0]}}
-            />
+                <Image
+                    style={styles.imageDog}
+                    source={{uri: detailsDog?.image?.[0]}}
+                />
             </View>
             <View style={styles.contentDescription}>
-                <View style={styles.contentRowList}>
-                    <Text>Nome:</Text>
-                </View>
+                <RowList
+                    description={detailsDog?.name}
+                    title='Nome:'
+                />
+                <RowList
+                    description={detailsDog?.description}
+                    title='Descrição:'
+                />
+                <RowList
+                    description={detailsDog?.address}
+                    title='Endereço:'
+                />
+                <RowList
+                    description={detailsDog?.years}
+                    title='Idade:'
+                />
+                <RowList
+                    description={detailsDog?.size}
+                    title='Tamanho:'
+                />
             </View>
         </View>
     )

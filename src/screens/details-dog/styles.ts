@@ -20,9 +20,9 @@ export const styles = StyleSheet.create({
         width: 100,
         borderRadius: 100,
         justifyContent: 'center',
-        alignItems:'center'
+        alignItems: 'center'
     },
-    contentDescription:{
+    contentDescription: {
         height: '100%',
         width: '90%',
         justifyContent: 'flex-start',
@@ -31,23 +31,5 @@ export const styles = StyleSheet.create({
         marginTop: 24,
         borderRadius: 20,
     },
-    contentRowList: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        borderBottomWidth: 1,
-        borderBottomColor: '#fff',
-        width: '100%',
-        marginTop: 24,
-        paddingLeft: 12,
-        paddingBottom: 8,
-    },
-    contentTextTitle: {
-        fontSize: 16,
-        fontWeight: 'bold',
-        color: '#fff',
-        
-    }
 
 })
-    
