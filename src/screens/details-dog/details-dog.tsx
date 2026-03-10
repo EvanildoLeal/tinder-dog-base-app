@@ -19,12 +19,12 @@ export const DetailsDog = () => {
             </View>
 
             <View style={styles.contentDescription}>
-                {/* Bolinhas nos 4 cantos */}
+                {/* Bolinhas brancas nos 4 cantos */}
                 <View style={styles.dotsContainer}>
-                    <View style={[styles.dotTopLeft, styles.dotActive]} />
-                    <View style={styles.dotTopRight} />
-                    <View style={styles.dotBottomLeft} />
-                    <View style={styles.dotBottomRight} />
+                    <View style={[styles.dotCorner, styles.dotTopLeft]} />
+                    <View style={[styles.dotCorner, styles.dotTopRight]} />
+                    <View style={[styles.dotCorner, styles.dotBottomLeft]} />
+                    <View style={[styles.dotCorner, styles.dotBottomRight]} />
                 </View>
 
                 <RowList
